@@ -16,7 +16,9 @@
 .square:focus {
 	outline: none;
 }
-
+.win {
+	color: red;
+}
 .kbd-navigation .square:focus {
 	background: #ddd;
 }

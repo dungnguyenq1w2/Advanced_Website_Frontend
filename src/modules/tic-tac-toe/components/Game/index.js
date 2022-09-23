@@ -1,53 +1,42 @@
 import './style.css'
 
-import React, { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
+
 import Board from '../Board'
-import { calculateWinner } from 'utils'
 
-function Game() {
-	const [history, setHistory] = useState([{ squares: Array(9).fill(null) }])
-	const [stepNumber, setStepNumber] = useState(0)
-	const [xIsNext, setXIsNext] = useState(true)
-
-	const handleClick = (i) => {
-		const _history = history.slice(0, stepNumber + 1)
-		const current = _history[_history.length - 1]
-		const squares = current.squares.slice()
-		if (calculateWinner(squares) || squares[i]) {
-			return
-		}
-		squares[i] = xIsNext ? 'X' : 'O'
-		setHistory([
-			..._history,
-			{
-				squares: squares,
-			},
-		])
-		setStepNumber(_history.length)
-		setXIsNext(!xIsNext)
-	}
-
-	const jumpTo = (step) => {
-		setStepNumber(step)
-		setXIsNext(step % 2 === 0)
-	}
-
+function Game({ size, winner, history, stepNumber, xIsNext, sorting, jumpTo, onSquareClick }) {
 	const current = useMemo(() => history[stepNumber], [history, stepNumber])
 
-	const winner = calculateWinner(current.squares)
-
 	const moves = history.map((step, move) => {
-		const desc = move ? 'Go to move #' + move : 'Go to game start'
+		const desc = move
+			? `Go to move #${move} with location ${step.isX ? 'X' : 'O'}(${step.location.x}, ${
+					step.location.y
+			  })`
+			: 'Go to game start'
 		return (
 			<li key={move}>
-				<button onClick={() => jumpTo(move)}>{desc}</button>
+				<button
+					className={`${
+						current.location.x === step.location.x &&
+						current.location.y === step.location.y &&
+						'bold'
+					}`}
+					onClick={() => jumpTo(move)}
+				>
+					{desc}
+				</button>
 			</li>
 		)
 	})
 
+	const sortedMoves = useMemo(() => {
+		if (sorting) return moves
+		else return moves.reverse()
+	}, [moves, sorting])
+
 	const status = useMemo(() => {
-		if (winner) {
-			return 'Winner: ' + winner
+		if (winner.player) {
+			return 'Winner: ' + winner.player
 		} else {
 			return 'Next player: ' + (xIsNext ? 'X' : 'O')
 		}
@@ -56,11 +45,16 @@ function Game() {
 	return (
 		<div className='game'>
 			<div className='game-board'>
-				<Board squares={current.squares} onClick={(i) => handleClick(i)} />
+				<Board
+					size={size}
+					winner={winner}
+					squares={current.squares}
+					onClick={(i) => onSquareClick(i)}
+				/>
 			</div>
 			<div className='game-info'>
 				<div>{status}</div>
-				<ol>{moves}</ol>
+				<ol>{sortedMoves}</ol>
 			</div>
 		</div>
 	)

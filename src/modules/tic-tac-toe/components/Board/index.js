@@ -1,32 +1,38 @@
 import './style.css'
 
-import React from 'react'
+import React, { useMemo } from 'react'
 import Square from '../Square'
 
-function Board({ squares, onClick }) {
-	function renderSquare(i) {
-		return <Square value={squares[i]} onClick={() => onClick(i)} />
+function Board({ size, winner, squares, onClick }) {
+	const sizes = useMemo(() => Array(size).fill(), [size])
+
+	function renderSquare(row) {
+		return (
+			<>
+				{sizes.map((e, col) => {
+					let isWin = false
+					if (winner.player) isWin = winner?.location?.includes(row * size + col)
+					return (
+						<Square
+							key={col}
+							isWin={isWin}
+							value={squares[row * size + col]}
+							onClick={() => onClick(row * size + col)}
+						/>
+					)
+				})}
+			</>
+		)
 	}
-	const status = 'Next player: X'
+
 	return (
-		<div>
-			<div className='status'>{status}</div>
-			<div className='board-row'>
-				{renderSquare(0)}
-				{renderSquare(1)}
-				{renderSquare(2)}
-			</div>
-			<div className='board-row'>
-				{renderSquare(3)}
-				{renderSquare(4)}
-				{renderSquare(5)}
-			</div>
-			<div className='board-row'>
-				{renderSquare(6)}
-				{renderSquare(7)}
-				{renderSquare(8)}
-			</div>
-		</div>
+		<>
+			{sizes.map((e, row) => (
+				<div key={row} className='board-row'>
+					{renderSquare(row)}
+				</div>
+			))}
+		</>
 	)
 }
 

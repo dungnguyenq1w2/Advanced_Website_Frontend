@@ -2,9 +2,10 @@ import './style.css'
 
 import React from 'react'
 
-function Square({ value, onClick }) {
+function Square({ value, isWin, onClick }) {
+	// console.log(isWin)
 	return (
-		<button className='square' onClick={onClick}>
+		<button className={`square ${isWin && 'win'}`} onClick={onClick}>
 			{value}
 		</button>
 	)

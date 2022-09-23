@@ -1,0 +1,55 @@
+.switch {
+	position: relative;
+	width: 1.4rem;
+	height: 0.75rem;
+	border-radius: 30px;
+	transition: background-color 100ms ease-out;
+	z-index: 1;
+}
+
+/* .switch::before,
+.switch::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	background-color: inherit;
+	border-radius: 50%;
+	width: 0.75rem;
+	height: 0.75rem;
+	z-index: 2;
+} */
+
+.switch::before {
+	left: -0.25rem;
+}
+.switch::after {
+	right: -0.25rem;
+}
+
+.toggle-button {
+	position: absolute;
+	width: 0.75rem;
+	height: 0.75rem;
+	background-color: black;
+	border-radius: 50%;
+	transition: transform 100ms ease-in-out;
+	z-index: 3;
+	/* border: 0.05rem solid black; */
+	/* top: -0.05rem; */
+}
+
+.switch_is-off {
+	background-color: #ff495c;
+}
+
+.switch_is-on {
+	background-color: #3ddc97;
+}
+
+/* .toggle-button_position-left {
+	transform: translateX(-0.04rem);
+} */
+
+.toggle-button_position-right {
+	transform: translateX(0.6rem);
+}
