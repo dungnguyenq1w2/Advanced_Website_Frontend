@@ -1,6 +1,6 @@
 import './style.css'
 
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo } from 'react'
 
 import Board from '../Board'
 
@@ -35,12 +35,14 @@ function Game({ size, winner, history, stepNumber, xIsNext, sorting, jumpTo, onS
 	}, [moves, sorting])
 
 	const status = useMemo(() => {
-		if (winner.player) {
-			return 'Winner: ' + winner.player
-		} else {
-			return 'Next player: ' + (xIsNext ? 'X' : 'O')
-		}
-	}, [winner, xIsNext])
+		if (current.squares.includes(null))
+			if (winner.player) {
+				return 'Winner: ' + winner.player
+			} else {
+				return 'Next player: ' + (xIsNext ? 'X' : 'O')
+			}
+		else return 'Draw'
+	}, [current, winner, xIsNext])
 
 	return (
 		<div className='game'>

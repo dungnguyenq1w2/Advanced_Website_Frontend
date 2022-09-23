@@ -7,7 +7,7 @@ import { calculateWinner } from 'utils'
 import Game from '../components/Game'
 import Toggle from 'common/components/Toggle'
 
-const size = 6
+const size = 4
 //prompt('Nhập số hàng/cột: ') // Số hàng/cột
 
 function TikTacToe() {
