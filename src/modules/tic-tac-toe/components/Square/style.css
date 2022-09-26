@@ -16,8 +16,17 @@
 .square:focus {
 	outline: none;
 }
+
 .win {
-	color: red;
+	color: red !important;
+}
+
+.x-style {
+	color: green;
+}
+
+.o-style {
+	color: blue;
 }
 .kbd-navigation .square:focus {
 	background: #ddd;
