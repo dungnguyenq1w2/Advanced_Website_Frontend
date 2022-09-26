@@ -17,10 +17,8 @@ const calculateWinner = (squares, isX, i, size) => {
 	// Major Diagonal
 	while (
 		(squares[yDown * size + xDown] === player || squares[yUp * size + xUp] === player) &&
-		xDown >= 0 &&
-		xUp <= size - 1 &&
-		yDown >= 0 &&
-		yUp <= size - 1
+		(xDown >= 0 || xUp <= size - 1) &&
+		(yDown >= 0 || yUp <= size - 1)
 	) {
 		if (squares[yDown * size + xDown] === player) {
 			location.push(yDown * size + xDown)
@@ -34,8 +32,8 @@ const calculateWinner = (squares, isX, i, size) => {
 			xUp = xUp + 1
 			yUp = yUp + 1
 		}
-
 		if (count === 4) return { player, location }
+		if (xDown < 0 && yDown < 0 && xUp > size - 1 && yUp > size - 1) break
 	}
 	count = 0
 	location = [i]
@@ -47,10 +45,8 @@ const calculateWinner = (squares, isX, i, size) => {
 	// Sub Diagonal
 	while (
 		(squares[yDown * size + xUp] === player || squares[yUp * size + xDown] === player) &&
-		xDown >= 0 &&
-		xUp <= size - 1 &&
-		yDown >= 0 &&
-		yUp <= size - 1
+		(xDown >= 0 || xUp <= size - 1) &&
+		(yDown >= 0 || yUp <= size - 1)
 	) {
 		if (squares[yDown * size + xUp] === player) {
 			location.push(yDown * size + xUp)
@@ -64,8 +60,8 @@ const calculateWinner = (squares, isX, i, size) => {
 			xDown = xDown - 1
 			yUp = yUp + 1
 		}
-
 		if (count === 4) return { player, location }
+		if (xDown < 0 && yDown < 0 && xUp > size - 1 && yUp > size - 1) break
 	}
 	count = 0
 	location = [i]
@@ -77,8 +73,7 @@ const calculateWinner = (squares, isX, i, size) => {
 	// Horizontal
 	while (
 		(squares[y * size + xDown] === player || squares[y * size + xUp] === player) &&
-		xDown >= 0 &&
-		xUp <= size - 1
+		(xDown >= 0 || xUp <= size - 1)
 	) {
 		if (squares[y * size + xDown] === player) {
 			location.push(y * size + xDown)
@@ -102,8 +97,7 @@ const calculateWinner = (squares, isX, i, size) => {
 	// Vertical
 	while (
 		(squares[yDown * size + x] === player || squares[yUp * size + x] === player) &&
-		yDown >= 0 &&
-		yUp <= size - 1
+		(yDown >= 0 || yUp <= size - 1)
 	) {
 		if (squares[yDown * size + x] === player) {
 			location.push(yDown * size + x)
