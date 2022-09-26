@@ -20,6 +20,7 @@ const calculateWinner = (squares, isX, i, size) => {
 		(xDown >= 0 || xUp <= size - 1) &&
 		(yDown >= 0 || yUp <= size - 1)
 	) {
+		if ((xDown < 0 || yDown < 0) && (xUp > size - 1 || yUp > size - 1)) break
 		if (squares[yDown * size + xDown] === player) {
 			location.push(yDown * size + xDown)
 			count = count + 1
@@ -33,7 +34,6 @@ const calculateWinner = (squares, isX, i, size) => {
 			yUp = yUp + 1
 		}
 		if (count === 4) return { player, location }
-		if (xDown < 0 && yDown < 0 && xUp > size - 1 && yUp > size - 1) break
 	}
 	count = 0
 	location = [i]
