@@ -115,4 +115,18 @@ const calculateWinner = (squares, isX, i, size) => {
 	return { player: false }
 }
 
-export { calculateWinner }
+const getRandomMemes = (memes) => {
+	const length = memes.length
+	const newMemes = []
+
+	while (newMemes.length < 20) {
+		const randomIndex = Math.floor(Math.random() * length)
+		if (!newMemes.some((meme) => meme.id === memes[randomIndex].id)) {
+			newMemes.push(memes[randomIndex])
+		}
+	}
+
+	return newMemes
+}
+
+export { calculateWinner, getRandomMemes }

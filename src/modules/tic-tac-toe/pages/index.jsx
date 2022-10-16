@@ -2,10 +2,11 @@ import 'modules/tic-tac-toe/assets/style/index.css'
 
 import { useState } from 'react'
 
-import { calculateWinner } from 'utils'
+import { calculateWinner } from 'utils/func'
 
 import Game from '../components/Game'
 import Toggle from 'common/components/Toggle'
+import { Link } from 'react-router-dom'
 
 // let size = parseInt(prompt('Nhập số hàng/cột: ')) // Số hàng/cột
 // if (!size) size = 7
@@ -92,8 +93,11 @@ function TikTacToe() {
 	}
 
 	return (
-		<div className='container'>
-			<h1>Tic Tac Toe</h1>
+		<div className='tictactoe__body'>
+			<div>
+				<Link to='/'>Back to Home</Link>
+				<h1>Tic Tac Toe</h1>
+			</div>
 			<div className='form'>
 				<label htmlFor='size'>Size:</label>
 				<input

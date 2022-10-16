@@ -1,0 +1,15 @@
+.meme__item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.meme__item p {
+	width: 250px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 15px;
+	font-weight: 600;
+	text-align: center;
+}

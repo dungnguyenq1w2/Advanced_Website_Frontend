@@ -1,0 +1,58 @@
+.meme__body {
+	margin: 1rem 10rem;
+}
+
+.meme__body h1 {
+	text-align: center;
+}
+
+.meme__body button {
+	display: block;
+	width: 150px;
+	margin: 30px auto;
+	padding: 15px 10px;
+	outline: none;
+	border: none;
+	border-radius: 24px;
+	background-color: #00bb42;
+	color: #ffffff;
+	font-size: 16px;
+	font-weight: 700;
+	box-shadow: 0 2px 8px -1px rgba(21, 25, 36, 0.32);
+	cursor: pointer;
+}
+
+.meme__body button:hover {
+	transition: 0.1s ease-in;
+	background-color: #02ac3e;
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1536px) {
+	.meme__body {
+		margin: 0 5rem;
+	}
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+	.container {
+		grid-template-columns: auto auto auto;
+	}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+}

@@ -1,0 +1,18 @@
+.nav__item {
+	margin: 10px 20px;
+	width: 300px;
+	padding: 10px 30px;
+	box-shadow: 1px 1px 15px rgb(145, 145, 145);
+	border-radius: 15px;
+	cursor: pointer;
+}
+
+.nav__item:hover {
+	transition: 0.1s ease-in-out;
+	box-shadow: 1px 1px 20px rgb(145, 145, 145);
+}
+
+.nav__item p {
+	font-size: 16px;
+	color: #686868;
+}

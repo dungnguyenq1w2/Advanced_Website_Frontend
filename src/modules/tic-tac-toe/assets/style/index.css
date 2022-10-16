@@ -1,7 +1,15 @@
-.container {
+.tictactoe__body {
 	/* display: flex; */
-}
+	font: 14px 'Century Gothic', Futura, sans-serif;
+	margin: 20px;
 
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.tictactoe__body ol,
+.tictactoe__body ul {
+	padding-left: 30px;
+}
 .form {
 	margin-bottom: 20px;
 	display: flex;
@@ -11,6 +19,10 @@
 .form label {
 	margin-right: 10px;
 	font-size: 18px;
+}
+
+.form input {
+	width: 124px;
 }
 
 .form .toggle {
