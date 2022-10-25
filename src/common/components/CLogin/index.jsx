@@ -29,6 +29,7 @@ function CLogin() {
 	} = useForm(formOptions)
 
 	const onSubmit = async (data) => {
+		setLoading(true)
 		const res = await login(data)
 
 		if (res?.data) {
@@ -94,7 +95,7 @@ function CLogin() {
 						{loading ? (
 							<svg
 								xmlns='http://www.w3.org/2000/svg'
-								className='animate-ping h-5 w-5 mt-2'
+								// className='animate-ping h-5 w-5 mt-2'
 								fill='none'
 								viewBox='0 0 24 24'
 								stroke='currentColor'
