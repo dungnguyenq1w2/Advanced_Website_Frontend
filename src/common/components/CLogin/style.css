@@ -1,0 +1,118 @@
+.login {
+	border-radius: 0.5rem;
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+	width: 450px;
+}
+.login__top {
+	padding-top: 0.25rem;
+	padding-bottom: 0.25rem;
+	background-color: #f6a53b;
+	color: #ffffff;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+}
+
+.login__form {
+	padding-left: 1.5rem;
+	padding-right: 3.5rem;
+	padding-top: 0.75rem;
+	padding-bottom: 1rem;
+	margin-bottom: 0.5rem;
+	background-color: #ffffff;
+	border-bottom-right-radius: 0.5rem;
+	border-bottom-left-radius: 0.5rem;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.login__item {
+	margin-bottom: 0.5rem;
+}
+
+.login__label {
+	display: block;
+	margin-bottom: 0.5rem;
+	color: #374151;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	font-weight: 700;
+}
+
+.login__input {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
+	margin-bottom: 0.25rem;
+	color: #374151;
+	line-height: 1.25;
+	width: 100%;
+	border-radius: 0.25rem;
+	border-width: 1px;
+	appearance: none;
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.login__error {
+	padding-top: 0.25rem;
+	padding-bottom: 0.25rem;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	background-color: #fecaca;
+	color: #7f1d1d;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	font-weight: 600;
+	border-radius: 0.25rem;
+}
+
+.login__bottom {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.login__loading {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.login__loading svg {
+	margin-top: 0.5rem;
+	animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+
+	width: 1.25rem;
+	height: 1.25rem;
+}
+
+@keyframes ping {
+	75%,
+	100% {
+		transform: scale(2);
+		opacity: 0;
+	}
+}
+
+.btn__login {
+	display: block;
+	width: 150px;
+	margin-top: 10px;
+	padding: 15px 10px;
+	outline: none;
+	border: none;
+	border-radius: 24px;
+	background-color: #f6a53b;
+	color: #ffffff;
+	font-size: 16px;
+	font-weight: 700;
+	box-shadow: 0 2px 8px -1px rgba(21, 25, 36, 0.32);
+	cursor: pointer;
+}
+
+.btn__login:hover {
+	transition: 0.1s ease-in;
+	background-color: #fc9b1d;
+}

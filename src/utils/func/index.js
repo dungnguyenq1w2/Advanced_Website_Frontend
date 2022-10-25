@@ -1,4 +1,4 @@
-const calculateWinner = (squares, isX, i, size) => {
+export const calculateWinner = (squares, isX, i, size) => {
 	if (i == null) return
 
 	const x = i % size
@@ -115,7 +115,7 @@ const calculateWinner = (squares, isX, i, size) => {
 	return { player: false }
 }
 
-const getRandomMemes = (memes) => {
+export const getRandomMemes = (memes) => {
 	const length = memes.length
 	const newMemes = []
 
@@ -129,4 +129,7 @@ const getRandomMemes = (memes) => {
 	return newMemes
 }
 
-export { calculateWinner, getRandomMemes }
+export function isSuccess(response) {
+	const status = response?.response ? response.response.status : response.status
+	return status.toString()[0] === '2'
+}

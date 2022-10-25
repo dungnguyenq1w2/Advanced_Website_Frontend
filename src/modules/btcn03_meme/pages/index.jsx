@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 import MemeList from '../components/MemeList'
 import { getRandomMemes } from 'utils/func'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 function Meme() {
 	const [memes, setMemes] = useState([])
@@ -13,14 +14,18 @@ function Meme() {
 		fetchMemes()
 	}, [])
 
-	const fetchMemes = () => {
-		fetch('https://api.imgflip.com/get_memes')
-			.then((data) => data.json())
-			.then((data) => {
-				const randomMemes = getRandomMemes(data.data.memes)
+	const fetchMemes = async () => {
+		try {
+			const res = await axios.get('https://api.imgflip.com/get_memes')
+			if (res.data) {
+				const randomMemes = getRandomMemes(res.data.data.memes)
 				setMemes(randomMemes)
-			})
-			.catch((error) => console.log(error))
+			} else {
+				return
+			}
+		} catch (error) {
+			console.log(error)
+		}
 	}
 	return (
 		<div className='meme__body'>

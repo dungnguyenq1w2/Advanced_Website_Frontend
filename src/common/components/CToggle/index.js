@@ -10,7 +10,7 @@ const ToggleButton = function ({ isOn }) {
 	return <div className={classNames}></div>
 }
 
-const Toggle = function ({ isOn, handleToggle }) {
+const CToggle = function ({ isOn, handleToggle }) {
 	let classNames = ['switch', isOn ? 'switch_is-on' : 'switch_is-off'].join(' ')
 	return (
 		<div className={classNames} onClick={handleToggle}>
@@ -19,4 +19,4 @@ const Toggle = function ({ isOn, handleToggle }) {
 	)
 }
 
-export default Toggle
+export default CToggle

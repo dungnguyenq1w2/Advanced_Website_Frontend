@@ -22,6 +22,12 @@ const assignments = [
 		name: 'Random Memes',
 		description: 'Learn Fetching data by useEffect and build layout to render meme list',
 	},
+	{
+		id: 'btcn04',
+		path: 'btcn04',
+		name: 'Registration',
+		description: 'Implement the Registration flow',
+	},
 ]
 
 function Home() {

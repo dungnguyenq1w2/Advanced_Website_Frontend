@@ -1,11 +1,11 @@
-import 'modules/tic-tac-toe/assets/style/index.css'
+import '../assets/style/index.css'
 
 import { useState } from 'react'
 
 import { calculateWinner } from 'utils/func'
 
 import Game from '../components/Game'
-import Toggle from 'common/components/Toggle'
+import CToggle from 'common/components/CToggle'
 import { Link } from 'react-router-dom'
 
 // let size = parseInt(prompt('Nhập số hàng/cột: ')) // Số hàng/cột
@@ -110,7 +110,7 @@ function TikTacToe() {
 				<button onClick={handleNewGame}>Enter</button>
 				<div className='toggle'>
 					<span>{isToggleSort ? 'Ascending' : 'Descending'}</span>
-					<Toggle isOn={isToggleSort} handleToggle={handleToggle} />
+					<CToggle isOn={isToggleSort} handleToggle={handleToggle} />
 				</div>
 			</div>
 

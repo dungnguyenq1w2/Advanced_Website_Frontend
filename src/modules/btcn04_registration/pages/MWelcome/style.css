@@ -1,0 +1,74 @@
+.registration__body {
+	margin: 1rem 10rem;
+}
+
+.registration__body h1 {
+	text-align: center;
+}
+.registration__body .welcome {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.registration__body .welcome button {
+	display: block;
+	width: 130px;
+	height: 50px;
+	margin-top: 10px;
+	margin-left: 20px;
+	padding: 15px 10px;
+	outline: none;
+	border: none;
+	border-radius: 24px;
+	background-color: #3b82f6;
+	color: #ffffff;
+	font-size: 16px;
+	font-weight: 700;
+	box-shadow: 0 2px 8px -1px rgba(21, 25, 36, 0.32);
+	cursor: pointer;
+}
+
+.registration__body .welcome button :hover {
+	transition: 0.1s ease-in;
+	background-color: #2375f8;
+}
+.registration__btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.registration__btn button {
+	display: block;
+	width: 150px;
+	margin-top: 10px;
+	margin: 0 10px;
+	padding: 15px 10px;
+	outline: none;
+	border: none;
+	border-radius: 24px;
+	color: #ffffff;
+	font-size: 16px;
+	font-weight: 700;
+	box-shadow: 0 2px 8px -1px rgba(21, 25, 36, 0.32);
+	cursor: pointer;
+}
+
+.registration__btn button :hover {
+	transition: 0.1s ease-in;
+}
+
+.btn__login {
+	background-color: #f6a53b;
+}
+
+.btn__register {
+	background-color: #3b82f6;
+}
+
+.registration__body .modal {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 50px;
+}
