@@ -28,6 +28,12 @@ const assignments = [
 		name: 'Registration',
 		description: 'Implement the Registration flow',
 	},
+	{
+		id: 'btcn05',
+		path: 'btcn05',
+		name: 'Apply Front-end Libraries',
+		description: 'Apply some front-end libraries in application',
+	},
 ]
 
 function Home() {

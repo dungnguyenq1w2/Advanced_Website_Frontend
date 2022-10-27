@@ -9,6 +9,7 @@ import * as Yup from 'yup'
 
 import { login, register as accountRegister } from 'apis/auth.api'
 import { useNavigate } from 'react-router-dom'
+import CLoading from '../CLoading'
 
 function CRegister() {
 	const [error, setError] = useState()
@@ -46,7 +47,7 @@ function CRegister() {
 				setTimeout(() => {
 					setLoading(false)
 				}, 600)
-				navigate('/btcn04')
+				navigate(-1)
 			} else {
 				setError(resLogin.error.message)
 				setTimeout(() => {
@@ -147,24 +148,7 @@ function CRegister() {
 							Đăng ký
 						</button>
 					</div>
-					<div className='register__loading'>
-						{loading ? (
-							<svg
-								xmlns='http://www.w3.org/2000/svg'
-								// className='animate-ping h-5 w-5 mt-2'
-								fill='none'
-								viewBox='0 0 24 24'
-								stroke='currentColor'
-							>
-								<path
-									strokeLinecap='round'
-									strokeLinejoin='round'
-									strokeWidth={2}
-									d='M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1'
-								/>
-							</svg>
-						) : null}
-					</div>
+					<div className='register__loading'>{loading && <CLoading />}</div>
 				</form>
 			</div>
 		</div>

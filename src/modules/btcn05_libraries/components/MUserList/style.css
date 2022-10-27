@@ -1,0 +1,11 @@
+.userlist__container thead {
+	background-color: rgb(32 182 90);
+	color: white;
+}
+.userlist__container thead th {
+	padding: 8px;
+}
+
+.userlist__container button {
+	margin: 0 auto;
+}

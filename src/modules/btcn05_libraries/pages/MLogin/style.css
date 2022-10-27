@@ -1,0 +1,12 @@
+.login__header {
+	margin: 1rem 10rem;
+}
+
+.login__header h1 {
+	text-align: center;
+}
+.login__body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

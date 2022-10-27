@@ -1,4 +1,4 @@
-import { AUTH } from './constanst'
+import { AUTH } from './_constanst'
 import { map } from 'utils/axios'
 import { isSuccess } from 'utils/func'
 import TokenService from 'utils/axios/token.axios'

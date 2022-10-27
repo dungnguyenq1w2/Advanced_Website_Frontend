@@ -1,0 +1,12 @@
+.register__header {
+	margin: 1rem 10rem;
+}
+
+.register__header h1 {
+	text-align: center;
+}
+.register__body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
