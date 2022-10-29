@@ -43,13 +43,13 @@
 	height: 1.25rem;
 }
 
-.libraries__body .container {
+.libraries__body .user__container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-.libraries__body .container button {
+.libraries__body .user__container button {
 	display: block;
 	width: 200;
 	height: 50px;
@@ -72,6 +72,10 @@
 		transform: scale(2);
 		opacity: 0;
 	}
+}
+
+.libraries__body .user__container span {
+	margin-top: 30px;
 }
 
 .libraries__btn {

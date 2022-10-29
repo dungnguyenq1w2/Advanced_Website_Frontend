@@ -8,6 +8,7 @@ export const getAllUsers = (params = {}) => {
 	}).get(USERS.GET, params)
 }
 export const getUserById = (id) => {
+	if (id === 0) return
 	return map(({ data, ...rest }) => {
 		return isSuccess(rest) ? { data: data } : { error: rest.response.data }
 	}).get(`${USERS.GETBYID}/${id}`)

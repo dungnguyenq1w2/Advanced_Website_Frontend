@@ -1,4 +1,9 @@
+.home__body {
+	background-color: #fdfdfd;
+	height: 100vh;
+}
 .home__body h1 {
 	text-align: center;
-	margin: 20px 0px 50px 0px;
+	margin: 0px 0px 50px 0px;
+	padding-top: 20px;
 }

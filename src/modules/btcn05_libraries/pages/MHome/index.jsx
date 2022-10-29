@@ -45,7 +45,6 @@ const data = [
 ]
 function MHome() {
 	const [user, setUser] = useState()
-	const [isFetch, setIsFetch] = useState(false)
 	const [isLoading, setIsLoading] = useState(false)
 
 	useEffect(() => {
@@ -74,8 +73,15 @@ function MHome() {
 						<button onClick={handleLogout}>Đăng xuất</button>
 						{isLoading && <CLoading />}
 					</div>
-					<div className='container'>
-						<button onClick={() => setIsFetch(true)}>Xem danh sách User</button>
+					<div className='user__container'>
+						<span>
+							Fetch user list with react-query (try catching by click Back to home and
+							then choose BTCN05)
+						</span>
+						<span>
+							Click a row in table to fetch user detail (try catching by click
+							different rows)
+						</span>
 						<div>{true && <MUserList />}</div>
 					</div>
 				</>

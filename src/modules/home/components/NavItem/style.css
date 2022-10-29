@@ -1,10 +1,11 @@
 .nav__item {
-	margin: 10px 20px;
+	margin: 20px 20px;
 	width: 300px;
 	padding: 10px 30px;
 	box-shadow: 1px 1px 15px rgb(145, 145, 145);
 	border-radius: 15px;
 	cursor: pointer;
+	background-color: white;
 }
 
 .nav__item:hover {

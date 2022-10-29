@@ -18,10 +18,9 @@ function MUserList() {
 		refetch,
 	} = useQuery(['users'], getAllUsers)
 
-	const { data: userInfo, isLoading } = useQuery(['user', userId], () => getUserById(userId), {
+	const { data: userInfo } = useQuery(['user', userId], () => getUserById(userId), {
 		enabled: !!userId,
 	})
-	console.log('🚀 ~ isLoading', isLoading)
 
 	const handleItemClick = (id) => {
 		setUserId(id)
