@@ -9,40 +9,6 @@ import { Link } from 'react-router-dom'
 function getUserData() {
 	return JSON.parse(localStorage.getItem('user'))
 }
-const data = [
-	{
-		id: 1,
-		name: 'Nguyễn Tấn Dũng',
-	},
-	{
-		id: 2,
-		name: 'Nguyễn Văn A',
-	},
-	{
-		id: 3,
-		name: 'Nguyễn Thị B',
-	},
-	{
-		id: 4,
-		name: 'Nguyễn Bảo Khánh',
-	},
-	{
-		id: 5,
-		name: 'Lê Anh Tú',
-	},
-	{
-		id: 6,
-		name: 'Trần Anh Khoa',
-	},
-	{
-		id: 7,
-		name: 'Trần Sơn Tùng',
-	},
-	{
-		id: 8,
-		name: 'Bùi Hùng Cường',
-	},
-]
 function MHome() {
 	const [user, setUser] = useState()
 	const [isLoading, setIsLoading] = useState(false)
@@ -79,8 +45,8 @@ function MHome() {
 							then choose BTCN05)
 						</span>
 						<span>
-							Click a row in table to fetch user detail (try catching by click
-							different rows)
+							Click a row in table to fetch user detail (username) (try catching by
+							click different rows)
 						</span>
 						<div>{true && <MUserList />}</div>
 					</div>

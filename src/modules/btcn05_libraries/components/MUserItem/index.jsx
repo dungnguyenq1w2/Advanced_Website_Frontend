@@ -26,14 +26,10 @@ function MUserItem({ index, user, onClick, userInfo }) {
 			<td>{index + 1}</td>
 			<td>{user.id}</td>
 			<td>{user.name}</td>
-			<div className='user__info'>
+			<td>
 				{isLoading && <CLoading />}
-				{userInfo?.username && (
-					<div>
-						<span>{userInfo?.username}</span>
-					</div>
-				)}
-			</div>
+				{userInfo?.username && <span>{userInfo?.username}</span>}
+			</td>
 		</tr>
 	)
 }

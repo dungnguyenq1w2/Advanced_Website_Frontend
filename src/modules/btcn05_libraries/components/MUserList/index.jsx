@@ -37,18 +37,19 @@ function MUserList() {
 						<th>STT</th>
 						<th>ID</th>
 						<th>Họ tên</th>
+						<th>Tài khoản</th>
 					</tr>
 				</thead>
 				<tbody>
-					{users.data.data.map((user, index) => {
-						if (user.id == userInfo?.data?.data?.id) {
+					{users?.data?.data.map((user, index) => {
+						if (user.id === userInfo?.data?.data?.id) {
 							return (
 								<MUserItem
 									key={user.id}
 									index={index}
 									user={user}
 									onClick={handleItemClick}
-									userInfo={userInfo.data.data}
+									userInfo={userInfo?.data?.data}
 								/>
 							)
 						} else {
