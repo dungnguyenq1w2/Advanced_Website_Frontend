@@ -94,7 +94,6 @@ function TikTacToe() {
 
 	return (
 		<div className='tictactoe__body'>
-			<h1>Test</h1>
 			<div>
 				<Link to='/'>Back to Home</Link>
 				<h1>Tic Tac Toe</h1>
